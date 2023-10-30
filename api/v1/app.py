@@ -4,6 +4,7 @@
 
 from api.v1.views import app_views
 from flask import Flask, make_response, jsonify
+from flask_cors import CORS
 from models import storage
 import os
 
@@ -15,6 +16,9 @@ app.register_blueprint(app_views)
 
 api_host = os.getenv("HBNB_API_HOST")
 api_port = os.getenv("HBNB_API_PORT")
+
+
+cors = CORS(app, resources={r"/*": {"origins":"0.0.0.0"}})
 
 
 @app.teardown_appcontext
