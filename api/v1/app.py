@@ -10,7 +10,7 @@ import os
 
 
 app = Flask(__name__)
-app.url_map.strict_slashes=False
+app.url_map.strict_slashes = False
 app.register_blueprint(app_views)
 
 
@@ -18,7 +18,7 @@ api_host = os.getenv("HBNB_API_HOST")
 api_port = os.getenv("HBNB_API_PORT")
 
 
-cors = CORS(app, resources={r"/*": {"origins":"0.0.0.0"}})
+cors = CORS(app, resources={r"/*": {"origins": "0.0.0.0"}})
 
 
 @app.teardown_appcontext
